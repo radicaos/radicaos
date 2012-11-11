@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Radicaos</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Radicaos</title>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 
-</body>
+    <%= favicon_link_tag %>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div class="container">
+          <h1><%= link_to image_tag('title.png', alt: 'Radicaos'), root_path %></h1>
+
+          <%= render 'layouts/navbar' %>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="container">
+          <div class="row">
+            <div class="span8" id="page_container">
+              <%= yield %>
+            </div>
+
+            <div class="span4">
+              <%= render 'layouts/soundcloud' %>
+
+              <div class="well">
+                <h4>Baixe agora!</h4>
+                <%= link_to image_tag('demo_cover.jpg'), '#' %>
+              </div>
+            </div>
+          </div>
+
+          <hr/>
+
+          <div class="row">
+            <div class="span4">
+              <%= render 'comments/new' %>
+              <%= render 'comments/index' %>
+            </div>
+
+            <div class="span4">
+              <%= render 'layouts/twitter' %>
+            </div>
+
+            <div class="span4">
+              <%= render 'layouts/facebook' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="push"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; copyleft Radicaos <%= Time.now.year %></p>
+      </div>
+    </footer>
+  </body>
 </html>

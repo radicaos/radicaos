@@ -16,7 +16,17 @@ if defined?(Bundler)
 end
 
 module Radicaos
+  def self.config
+    Application.config
+  end
+
   class Application < Rails::Application
+    radicaos_config_path = Rails.root.join("radicaos.yml")
+
+    if radicaos_config_path.exist?
+      YAML.load_file(radicaos_config_path).each { |k,v| config.send "#{k}=", v }
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -37,7 +47,7 @@ module Radicaos
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = 'pt-BR'
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
