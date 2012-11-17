@@ -1,3 +1,18 @@
 <h4>Deixe um recado!</h4>
 
-<%= render 'comments/form', {comment: Comment.new} %>
+<%= simple_form_for comment, html: {:class => 'clearfix'} do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'span4'} %>
+  <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'span4'} %>
+  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu comentário aqui...', input_html: {rows: '4', :class => 'span4'} %>
+
+  <div class="control-group <%= 'error' unless comment.errors[:captcha].empty? %>">
+    <div class="controls">
+      <%= recaptcha_tags ajax: true, display: {theme: 'white'} %>
+      <span class="help-inline"><%= comment.errors[:captcha].first %></span>
+    </div>
+  </div>
+
+  <%= f.button :submit, 'Postar comentário', :class => 'btn btn-primary pull-right' %>
+<% end %>

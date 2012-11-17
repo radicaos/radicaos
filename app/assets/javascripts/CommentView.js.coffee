@@ -7,7 +7,7 @@ window.CommentView = Backbone.View.extend
     this.model.on 'change', this.render, this
     this.model.on 'destroy', this.remove, this
 
-  template: _.template("<p><strong><%= name %></strong></p><%= content %><time class=\"pull-right\"><%= created_at %></time>")
+  template: _.template("<p><strong><%= name %></strong></p><p><%= content %></p>")
 
   render: ->
     this.$el.html this.template(this.model.toJSON())

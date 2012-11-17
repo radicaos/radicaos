@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all.limit 20
+    @comments = Comment.all.order_by([:created_at, :desc]).limit(20)
     respond_with(@comments)
   end
 
