@@ -5,14 +5,7 @@
 
   <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'span4'} %>
   <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'span4'} %>
-  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu comentário aqui...', input_html: {rows: '4', :class => 'span4'} %>
-
-  <div class="control-group <%= 'error' unless comment.errors[:captcha].empty? %>">
-    <div class="controls">
-      <%= recaptcha_tags ajax: true, display: {theme: 'white'} %>
-      <span class="help-inline"><%= comment.errors[:captcha].first %></span>
-    </div>
-  </div>
+  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu comentário aqui...', input_html: {rows: '3', :class => 'span4'} %>
 
   <%= f.button :submit, 'Postar comentário', :class => 'btn btn-primary pull-right' %>
 <% end %>

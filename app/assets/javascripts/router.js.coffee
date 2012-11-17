@@ -29,6 +29,8 @@ window.Radicaos = Backbone.Router.extend
     Backbone.history.start
       pushState: true
 
+    prepareDownload()
+
     comments = new Comments()
     comments.fetch()
 
@@ -45,6 +47,9 @@ window.Radicaos = Backbone.Router.extend
       _.each ['name', 'email', 'content'], (field)->
         comment.set field, $("#comment_#{field}").attr('value')
         $("#comment_#{field}").attr('value', '')
+
+      _.each ['recaptcha_challenge_field', 'recaptcha_response_field'], (field)->
+        comment.set field, $("##{field}").attr('value')
 
       if comment.save()
         comments.add comment

@@ -1,38 +1,24 @@
 class DownloadsController < ApplicationController
-  def index
-    @downloads = Download.all
-    respond_with(@downloads)
-  end
-
-  def show
-    @download = Download.find(params[:id])
-    respond_with(@download)
-  end
-
-  def new
-    @download = Download.new
-    respond_with(@download)
-  end
-
-  def edit
-    @download = Download.find(params[:id])
-  end
 
   def create
-    @download = Download.new(params[:download])
-    @download.save
-    respond_with(@download)
-  end
+    if verify_recaptcha
+      @resource = Resource.find_by filename: params[:resource_filename]
 
-  def update
-    @download = Download.find(params[:id])
-    @download.update_attributes(params[:download])
-    respond_with(@download)
-  end
+      @download = Download.new params[:download]
+      @download.resource = @resource
+      @download.ip = request.remote_ip
 
-  def destroy
-    @download = Download.find(params[:id])
-    @download.destroy
-    respond_with(@download)
+      if @download.save
+        path = 'private/' + @resource.filename
+
+        if File.exist?(path)
+          send_file path, stream: false
+        end
+      else
+        redirect_to root_path
+      end
+    else
+      redirect_to root_path
+    end
   end
 end
