@@ -1,13 +1,22 @@
 window.CommentView = Backbone.View.extend
+
   tagName: "div"
 
-  className: "well well-small comment"
+  className: "well well-small media comment"
 
   initialize: ->
     this.model.on 'change', this.render, this
     this.model.on 'destroy', this.remove, this
 
-  template: _.template("<p><strong><%= name %></strong></p><p><%= content %></p>")
+  template: _.template """
+    <div class="pull-left">
+      <img class="media-object" src="http://www.gravatar.com/avatar/<%= MD5(email) %>?s=40&d=retro&r=x" />
+    </div>
+    <div class="media-body">
+      <h5 class="media-heading"><%= name %></h5>
+      <p><%= content %></p>
+    </div>
+  """
 
   render: ->
     this.$el.html this.template(this.model.toJSON())
