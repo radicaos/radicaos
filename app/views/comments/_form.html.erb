@@ -1,10 +1,9 @@
-<%= simple_form_for(comment) do |f| %>
+<%= simple_form_for comment, html: {:class => 'clearfix'} do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-  </div>
+  <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'span4'} %>
+  <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'span4'} %>
+  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu comentário aqui...', input_html: {rows: '4', :class => 'span4'} %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, 'Enviar', :class => 'btn btn-primary btn-large pull-right' %>
 <% end %>

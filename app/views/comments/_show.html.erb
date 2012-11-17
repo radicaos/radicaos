@@ -1,0 +1,5 @@
+<div class="well well-small comment clearfix">
+  <p><strong><%= comment.name %>:</strong></p>
+  <%= simple_text comment.content %>
+  <%= time_tag comment.created_at, humanize_datetime(comment.created_at), :class => 'pull-right' %>
+</div>
