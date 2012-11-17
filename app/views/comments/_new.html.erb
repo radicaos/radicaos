@@ -1,11 +1,11 @@
-<h4>Deixe um recado!</h4>
+<h4>Deixe um recado</h4>
 
 <%= simple_form_for comment, html: {:class => 'clearfix'} do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'span4'} %>
   <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'span4'} %>
-  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu comentário aqui...', input_html: {rows: '3', :class => 'span4'} %>
+  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu recado aqui...', input_html: {rows: '3', :class => 'span4'} %>
 
-  <%= f.button :submit, 'Postar comentário', :class => 'btn btn-primary pull-right' %>
+  <%= f.button :submit, 'Postar', :class => 'btn btn-danger pull-right' %>
 <% end %>

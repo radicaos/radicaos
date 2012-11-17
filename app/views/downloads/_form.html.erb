@@ -1,4 +1,4 @@
-<%= simple_form_for download, html: {:class => 'clearfix'} do |f| %>
+<%= simple_form_for download do |f| %>
   <%= f.error_notification %>
 
   <%= hidden_field_tag :resource_filename, "Radicaos_Demo.zip" %>
@@ -10,5 +10,5 @@
     </div>
   </div>
 
-  <%= f.button :submit, 'Download', :class => 'btn btn-primary btn-large pull-right' %>
+  <%= f.button :submit, 'Download', :class => 'btn btn-danger btn-large btn-block' %>
 <% end %>
