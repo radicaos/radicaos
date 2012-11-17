@@ -2,7 +2,15 @@
   <h1>CONTATO</h1>
 </div>
 
-<p>E-mail: <%= mail_to 'banda@radicaos.com' %><br/>
-Twitter: <%= link_to '@radicaos', 'http://twitter.com/radicaos', :target => '_blank' %><br/>
-Facebook: <%= link_to 'facebook.com/radicaos','http://facebook.com/radicaos', :target => '_blank' %></p>
-<%= image_tag '02.jpg' %>
+<dl>
+  <dt>E-mail</dt>
+  <dd><%= mail_to 'banda@radicaos.com' %></dd>
+
+  <dt>Twitter</dt>
+  <dd><%= link_to '@radicaos', 'http://twitter.com/radicaos', target: '_blank' %></dd>
+
+  <dt>Facebook</dt>
+  <dd><%= link_to 'facebook.com/radicaos','http://facebook.com/radicaos', target: '_blank' %></dd>
+</dl>
+
+<p><%= image_tag '03.jpg', class: 'img-polaroid' %></p>
