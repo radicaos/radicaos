@@ -41,8 +41,13 @@ window.CommentsView = Backbone.View.extend
     commentView.$el.hide().show 'slow'
 
   addAll: ->
-    this.$el.html = ''
+    this.$el.find('.comment').remove()
     this.collection.forEach this.addOne, this
 
   render: ->
+    this.$el.html '''
+      <p class="clearfix">
+        <a id="moreComments" class="pull-right btn btn-mini" data-remote="true" href="/comments/more">Carregar mais</a>
+      </p>
+    '''
     this.addAll();
