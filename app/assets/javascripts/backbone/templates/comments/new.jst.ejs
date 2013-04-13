@@ -1,0 +1,50 @@
+<h4>Deixe um recado</h4>
+
+<form id="new-comment" name="comment">
+  <div class="control-group
+    <% if(errors != null && typeof errors === 'object' && errors.name != undefined){ %>
+      error
+    <% } %>
+  ">
+    <div class="controls">
+      <input type="text" name="name" id="name" value="<%= name %>" placeholder="Nome" class="span4" />
+      <span class="help-inline">
+        <% if(errors != null && typeof errors === 'object' && errors.name != undefined){ %>
+          <%= errors.name[0] %>
+        <% } %>
+      </span>
+    </div>
+  </div>
+
+  <div class="control-group
+    <% if(errors != null && typeof errors === 'object' && errors.email != undefined){ %>
+      error
+    <% } %>
+  ">
+    <div class="controls">
+      <input type="text" name="email" id="email" value="<%= email %>" placeholder="E-mail" class="span4" />
+      <span class="help-inline">
+        <% if(errors != null && typeof errors === 'object' && errors.email != undefined){ %>
+          <%= errors.email[0] %>
+        <% } %>
+      </span>
+    </div>
+  </div>
+
+  <div class="control-group
+    <% if(errors != null && typeof errors === 'object' && errors.content != undefined){ %>
+      error
+    <% } %>
+  ">
+    <div class="controls">
+      <textarea name="content" id="content" placeholder="Escreva seu recado aqui..." class="span4" ><%= content %></textarea>
+      <span class="help-inline">
+        <% if(errors != null && typeof errors === 'object' && errors.content != undefined){ %>
+          <%= errors.content[0] %>
+        <% } %>
+      </span>
+    </div>
+  </div>
+
+  <input type="submit" value="Postar" class="btn btn-large btn-danger" />
+</form>
