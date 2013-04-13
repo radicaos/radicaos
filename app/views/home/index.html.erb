@@ -11,22 +11,21 @@
     <hr/>
 
     <div id="comments_section">
-      <%#= render 'comments/new', {comment: Comment.new} %>
       <div id="comment_form"></div>
       <div id="comments"></div>
     </div>
   </div>
 
   <div class="span4">
-    <%#= render 'layouts/soundcloud' %>
+    <%= render 'layouts/soundcloud' %>
 
     <div class="well" id="download">
       <h4>Baixe agora!</h4>
       <%= link_to image_tag('demo_cover.jpg'), new_download_path, id: 'download_link' %>
     </div>
 
-    <%#= render 'layouts/facebook' %>
+    <%= render 'layouts/facebook' %>
 
-    <%#= render 'layouts/twitter' %>
+    <%= render 'layouts/twitter' %>
   </div>
 </div>

@@ -20,7 +20,6 @@ gem 'twitter-bootstrap-rails'
 gem 'unicorn'
 gem 'mongoid'
 gem 'responders'
-gem 'simple_form'
 gem 'geocoder'
 gem 'recaptcha', require: 'recaptcha/rails'
 
