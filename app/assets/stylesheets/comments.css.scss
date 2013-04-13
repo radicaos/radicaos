@@ -1,4 +1,10 @@
 #comments{
   overflow: auto;
-  max-height: 300px;
+  max-height: 340px;
+}
+
+#new_comment {
+  textarea {
+    height: 105px;
+  }
 }

@@ -20,8 +20,8 @@ window.Radicaos = Backbone.Router.extend
 
   start: ()->
     _this = this
-    $(".navbar .nav a").live "click", (e)->
-      href = $(this).attr "href";
+    $('.navbar .nav a').on 'click', (e)->
+      href = $(this).attr 'href';
       if href[0] == '/'
         res = _this.navigate href, true
         return false;

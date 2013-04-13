@@ -1,11 +1,21 @@
 <h4>Deixe um recado</h4>
 
-<%= simple_form_for comment, html: {:class => 'clearfix'} do |f| %>
+<%= simple_form_for comment, html: {class: 'row'} do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'span4'} %>
-  <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'span4'} %>
-  <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu recado aqui...', input_html: {rows: '3', :class => 'span4'} %>
+  <div class="span4">
+    <%= f.input :name, label: false, placeholder: 'Nome', input_html: {:class => 'input-block-level'} %>
+    <%= f.input :email, label: false, placeholder: 'E-mail', input_html: {:class => 'input-block-level'} %>
+    <%= f.input :content, as: :text, label: false, placeholder: 'Escreva seu recado aqui...', input_html: {:class => 'input-block-level'} %>
+  </div>
 
-  <%= f.button :submit, 'Postar', :class => 'btn btn-danger pull-right' %>
+  <div class="span4">
+    <div class="control-group <%= 'error' unless comment.errors[:captcha].empty? %>">
+      <div class="controls">
+        <%= recaptcha_tags display: {theme: 'white'} %>
+        <span class="help-inline"><%= comment.errors[:captcha].first %></span>
+      </div>
+    </div>
+    <%= f.button :submit, 'Postar', class: 'btn btn-large btn-danger' %>
+  </div>
 <% end %>

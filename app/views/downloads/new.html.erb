@@ -1,0 +1,11 @@
+<div class="page-header" id="thankyou">
+  <h1>Muito obrigado por baixar a nossa demo!</h1>
+</div>
+
+<div class="row">
+  <div class="span4 offset4">
+    <div class="well"><%= image_tag 'demo_cover.jpg' %></div>
+
+    <%= render 'downloads/form', {download: Download.new} %>
+  </div>
+</div>

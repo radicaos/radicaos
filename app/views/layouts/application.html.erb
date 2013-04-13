@@ -29,43 +29,17 @@
 
   <body>
     <div id="wrap">
-      <div id="header">
+      <header>
         <div class="container">
           <h1><%= link_to image_tag('title.png', alt: 'Radicaos'), root_path %></h1>
 
           <%= render 'layouts/navbar' %>
         </div>
-      </div>
+      </header>
 
       <div id="main">
         <div class="container">
-          <div class="row">
-            <div class="span8" id="page_container">
-              <%= yield %>
-            </div>
-
-            <div class="span4">
-              <%= render 'layouts/soundcloud' %>
-
-              <%= render 'downloads/new' %>
-            </div>
-          </div>
-
-          <hr/>
-
-          <div class="row">
-            <div class="span4" id="comments_container">
-              <%= render 'comments/new', {comment: Comment.new} %>
-            </div>
-
-            <div class="span4">
-              <%= render 'layouts/twitter' %>
-            </div>
-
-            <div class="span4">
-              <%= render 'layouts/facebook' %>
-            </div>
-          </div>
+          <%= yield %>
         </div>
       </div>
 

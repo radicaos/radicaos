@@ -1,5 +1,30 @@
-<% ['about', 'lyrics', 'tour', 'contact'].each do |page| %>
-  <div class="page" id="<%= page %>_page">
-    <%= render "home/#{page}" %>
+<div class="row">
+  <div class="span8">
+    <div id="index_page_container">
+      <% ['about', 'lyrics', 'tour', 'contact'].each do |page| %>
+        <div class="page" id="<%= page %>_page">
+          <%= render "home/#{page}" %>
+        </div>
+      <% end %>
+    </div>
+
+    <hr/>
+
+    <div id="comments_container">
+      <%= render 'comments/new', {comment: Comment.new} %>
+    </div>
   </div>
-<% end %>
+
+  <div class="span4">
+    <%= render 'layouts/soundcloud' %>
+
+    <div class="well" id="download">
+      <h4>Baixe agora!</h4>
+      <%= link_to image_tag('demo_cover.jpg'), new_download_path, id: 'download_link' %>
+    </div>
+
+    <%= render 'layouts/facebook' %>
+
+    <%= render 'layouts/twitter' %>
+  </div>
+</div>
