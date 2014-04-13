@@ -23,13 +23,15 @@
   </head>
 
   <body>
-    {% include header.html %}
+    <div class="wrap">
+      {% include header.html %}
 
-    <div class="main">
-      <div class="container">
-        {{ content }}
+      <div class="main">
+        <div class="container">
+          {{ content }}
 
-        {% include  disqus.html %}
+          {% include  disqus.html %}
+        </div>
       </div>
     </div>
 

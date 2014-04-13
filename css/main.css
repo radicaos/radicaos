@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Sniglet);
+
 * {
   margin: 0;
   padding: 0;
@@ -8,18 +10,13 @@ html, body {
 }
 
 body {
-  background-color: #8A0808;
+  background-color: #8a0808;
   font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
-  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
-}
-
-h1 {
-  margin-bottom: 1em;
 }
 
 p {
@@ -35,17 +32,28 @@ a:hover {
 }
 
 .container {
-  width: 700px;
+  width: 960px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
+.wrap {
+  background-color: #111;
+}
+
 header {
-  text-align: center;
-  background-color: #000;
-  padding: 20px 0;
-  background-image: url('/images/background.jpg');
-  background-position: center;
+  padding: 40px 0 20px;
+}
+
+header h1 {
+  font-family: 'Sniglet', cursive;
+  font-size: 90px;
+}
+
+header a, header a:visited {
+
+  color: #8a0808;
+  text-decoration: none;
 }
 
 footer {
@@ -53,10 +61,15 @@ footer {
   color: #fff;
 }
 
-.main {
-  background-color: #eee;
-}
-
 .component {
   margin-bottom: 20px;
+}
+
+.disqus {
+  width: 650px;
+  margin: 0 auto;
+}
+
+.youtube {
+  margin-bottom: 40px;
 }
