@@ -3,6 +3,7 @@ Radicaos::Application.routes.draw do
 
   resources :comments do
     get 'more', on: :collection
+    get 'wordpress', on: :collection
   end
 
   get '/about' => 'home#index', as: :about

@@ -13,4 +13,8 @@ class CommentsController < ApplicationController
 
     respond_with(@comment)
   end
+
+  def wordpress
+    @comments = Comment.all.order_by([:created_at, :asc])
+  end
 end
