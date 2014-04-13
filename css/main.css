@@ -144,10 +144,12 @@ footer a:hover {
 
 .lyrics {
   float: left;
+  max-width: 470px;
 }
 
-.soundcloud {
+.soundcloud-float {
   float: right;
+  width: 470px;
 }
 
 .contact {
