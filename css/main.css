@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Sniglet);
+@import url(http://fonts.googleapis.com/css?family=Averia+Libre);
 
 * {
   margin: 0;
@@ -56,9 +56,11 @@ header {
 }
 
 header h1 {
-  font-family: 'Sniglet', cursive;
+  font-family: 'Averia Libre', cursive;
   font-size: 90px;
   float: left;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 header h1 a, header h1 a:visited {
