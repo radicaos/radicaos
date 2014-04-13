@@ -48,12 +48,40 @@ header {
 header h1 {
   font-family: 'Sniglet', cursive;
   font-size: 90px;
+  float: left;
 }
 
 header a, header a:visited {
-
   color: #8a0808;
   text-decoration: none;
+  text-shadow: #555 0 1px 5px;
+  transition: all .5s ease-in-out;
+}
+
+header a:hover {
+  text-shadow: #777 0 1px 10px;
+}
+
+.menu {
+  list-style: none;
+  float: right;
+}
+
+.menu a, .menu a:visited {
+  color: #fff;
+  background-color: #8a0808;
+  margin-bottom: 5px;
+  width: 160px;
+  padding: 5px 0;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.menu a:hover {
+  background-color: #fff;
+  color: #8a0808;
 }
 
 footer {
