@@ -13,6 +13,7 @@ body {
   background-color: #8a0808;
   font-family: Helvetica, Verdana, sans-serif;
   color: #fff;
+  font-size: 15px;
 }
 
 p {
@@ -110,8 +111,24 @@ header h1 a:hover {
 
 footer {
   text-align: center;
+  color: #ccc;
+  margin: 60px 0;
+}
+
+footer a, footer a:visited {
   color: #fff;
-  padding-bottom: 60px;
+}
+
+footer .divider {
+  margin: 0 30px;
+}
+
+footer .copyleft {
+  font-size: 13px;
+}
+
+footer a:hover {
+  color: #ccc;
 }
 
 .component {
