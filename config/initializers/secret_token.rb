@@ -1,1 +1,0 @@
-Radicaos::Application.config.secret_token = Radicaos::config.security['secret_token']

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+      {{ page.title }}
+    </title>
+
+    <meta name="keywords" content="Radicaos, banda, rock, funk, hardcore, punk,
+      alternative rock, víbora rock, Correntina, Bahia, Volmer">
+
+    <meta name="description" content="Site oficial da banda Radicaos. Rock, funk,
+      hardcore punk, linhas antigas e modernas. Radicaos é uma iniciativa musical
+      surgida em Correntina, velho oeste baiano.">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    {% include google_analytics.html %}
+  </head>
+
+  <body>
+    <div class="wrap">
+      {% include header.html %}
+
+      <div class="main">
+        <div class="container">
+          {{ content }}
+        </div>
+
+        <div class="container">
+          {% include disqus.html %}
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+  </body>
+</html>

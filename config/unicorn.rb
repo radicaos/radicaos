@@ -1,2 +1,0 @@
-listen 6000
-worker_processes 3
