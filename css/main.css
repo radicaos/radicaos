@@ -11,12 +11,8 @@ html, body {
 
 body {
   background-color: #8a0808;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+  font-family: Helvetica, Verdana, sans-serif;
+  color: #fff;
 }
 
 p {
@@ -24,17 +20,30 @@ p {
 }
 
 a, a:visited {
-  color: #00a;
+  text-decoration: none;
+  color: #8a0808;
 }
 
 a:hover {
-  color: #000;
+  color: #fff;
 }
 
 .container {
   width: 960px;
   margin: 0 auto;
   padding: 20px 0;
+}
+
+.container:before,
+.container:after {
+  content:"";
+  display:table;
+}
+.container:after {
+  clear:both;
+}
+.container {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 .wrap {
@@ -51,20 +60,34 @@ header h1 {
   float: left;
 }
 
-header a, header a:visited {
-  color: #8a0808;
-  text-decoration: none;
-  text-shadow: #555 0 1px 5px;
+header h1 a, header h1 a:visited {
+  text-shadow: #933 0 1px 5px;
   transition: all .5s ease-in-out;
 }
 
-header a:hover {
+header h1 a:hover {
   text-shadow: #777 0 1px 10px;
+}
+
+.main h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3em;
+}
+
+.main h2 {
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .menu {
   list-style: none;
   float: right;
+}
+
+.lyrics hr {
+  background-color: #8a0808;
+  margin: 40px 0;
 }
 
 .menu a, .menu a:visited {
@@ -77,6 +100,7 @@ header a:hover {
   text-align: center;
   text-transform: uppercase;
   display: block;
+  transition: all .3s ease-in-out;
 }
 
 .menu a:hover {
@@ -87,6 +111,7 @@ header a:hover {
 footer {
   text-align: center;
   color: #fff;
+  padding-bottom: 60px;
 }
 
 .component {
@@ -94,10 +119,23 @@ footer {
 }
 
 .disqus {
-  width: 650px;
-  margin: 0 auto;
+  text-align: center;
+  margin: 60px 0;
 }
 
-.youtube {
-  margin-bottom: 40px;
+.lyrics {
+  float: left;
+}
+
+.soundcloud {
+  float: right;
+}
+
+.contact {
+  text-align: center;
+  font-size: 18px;
+}
+
+.contact dd {
+  margin-bottom: 20px;
 }
