@@ -1,3 +1,10 @@
+# Site settings
 name: Radicaos
-markdown: redcarpet
-pygments: true
+title: Radicaos
+email: banda@radicaos.com
+url: 'http://radicaos.com'
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-sitemap
