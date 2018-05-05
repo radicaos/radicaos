@@ -1,7 +1,7 @@
 # Site settings
 name: Radicaos
 title: Radicaos
-url: 'http://radicaos.com'
+url: 'https://radicaos.com'
 
 # Build settings
 markdown: kramdown
