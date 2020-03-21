@@ -5,5 +5,5 @@ url: 'https://radicaos.com'
 
 # Build settings
 markdown: kramdown
-gems:
+plugins:
   - jekyll-sitemap
